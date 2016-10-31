@@ -31,8 +31,8 @@ app.use(express.static(staticpath));
 var server  = require('http').createServer(app);
 // 监听断口和 ip 地址 127.0.0.1 或 0.0.0.0
 // 0.0.0.0 只要是同一个网络，都能监听到本机
-server.listen(5000, "0.0.0.0", function() {
-    console.log('http://127.0.0.1:5000');
+server.listen(80, "0.0.0.0", function() {
+    console.log('http://127.0.0.1:80');
 });
 
 
