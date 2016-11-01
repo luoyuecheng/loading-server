@@ -6,6 +6,9 @@ var express = require('express');
 var app = express(); // 或 var app = new express()
 var path = require("path");
 
+//加载 token 模块
+require("./token")(app);
+
 // route 术语：路由
 // request 浏览器发送给服务器的数据
 // response 服务器给浏览器返回的数据
