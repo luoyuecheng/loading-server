@@ -64,7 +64,9 @@ $("#getLocation").on("click",function(){
       var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
       var speed = res.speed; // 速度，以米/每秒计
       var accuracy = res.accuracy; // 位置精度
-      alert(latitude,longitude,speed,accuracy)
+
+      var text = ["纬度"+latitude,"经度"+longitude,"位置精度"+accuracy]
+      alert(text.join("\n"))
     }
 	});
 })
