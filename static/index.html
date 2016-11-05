@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	  <div id="">
-	  	luoyuecheng
-	  </div>
-	</body>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<body>
+  <div id="app">
+    luoyuecheng
+  </div>
+</body>
+<script type="text/html">
+	function jsonpCallback(res){
+		console.log(res);
+		alert(JSON.stringify(res));
+	}
+
+	var script = document.createElement("script");
+	script.src = "/wechat/jssdk?callback=jsonpCallback";
+	document.querySelector("body").appendChild(script);
+</script>
+<script type="text/javascript">
+
+	$.post("/wechat/jssdk",{},function(res){
+		console.log(res);
+	},"json");
+
+</script>
+<script type="text/javascript" src="test.js"></script>
 </html>

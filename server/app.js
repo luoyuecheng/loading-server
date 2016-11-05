@@ -5,10 +5,18 @@ var express = require('express');
 // 实例化 express 模块
 var app = express(); // 或 var app = new express()
 var path = require("path");
+////post 请求处理模块
+var bodyparser = require("body-parser");
+//app.use(bodyparser.json());
+
+//处理 post 请求，将 post 请求的数据封装为 json
+app.use(bodyparser.urlencoded({
+	extended: true
+}));
 
 //加载 token 模块
 require("./token.js")(app);
-
+require("./jssdk.js")(app);
 // route 术语：路由
 // request 浏览器发送给服务器的数据
 // response 服务器给浏览器返回的数据
