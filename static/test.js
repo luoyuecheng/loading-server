@@ -2,7 +2,7 @@ var obj = {
     title: '简介',
     desc: 'luoyuecheng',
     //分享链接
-    link: "http://wx.jscook.cn/",
+    link: "http://g23.jscook.cn",
     //分享的图片
     imgUrl: "http://www.jscss.cc/static/images/jscss.cc.ico",
     success: function() {
@@ -20,7 +20,9 @@ $(function(){
             'onMenuShareQQ',
             'onMenuShareWeibo',
             //查看网络状态权限
-            "onGetNetworkType"
+            "onGetNetworkType",
+            //查看位置权限
+            "onGetLocation"
 		].join(",")
 	},function(resp){
 		wx.config({
@@ -45,11 +47,23 @@ $(function(){
 })
 
 $("#getNetworkType").on("click",function(){
-		wx.getNetworkType({
-		    success: function (res) {
-		    	// 返回网络类型2g，3g，4g，wifi
-		        var networkType = res.networkType;
-		        alert(networkType);
-		    }
-		});
+	wx.getNetworkType({
+    success: function (res) {
+  	// 返回网络类型2g，3g，4g，wifi
+      var networkType = res.networkType;
+      alert(networkType);
+    }
+});
+});
+
+$("#getAddress").on("click",function(){
+	wx.getLocation({
+    type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+    success: function (res) {
+      var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+      var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+      var speed = res.speed; // 速度，以米/每秒计
+      var accuracy = res.accuracy; // 位置精度
+    }
 	});
+})
