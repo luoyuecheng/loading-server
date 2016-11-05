@@ -4,6 +4,16 @@
  * 注：测试时请替换您真实的数据
  */
 module.exports = function(){
+	//个人订阅号
+//return {
+//  //AppID(应用ID)
+//  appid: 'wxb920a5cf4dda9d0e',
+//  //AppSecret(应用密钥)
+//  appsecret: 'e7649afa180ca1bf19ca6277f5f07077',
+//  //Token(令牌)
+//  token: 'luoyuecheng'
+//};
+  //微信测试号
   return {
     //AppID(应用ID)
     appid: 'wxb920a5cf4dda9d0e',
